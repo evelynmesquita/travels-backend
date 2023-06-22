@@ -10,7 +10,7 @@ export async function getPassengersTravels(req, res) {
 
   try {
     const passengers = await getPassengerTravels(nameFilter, page);
-    return res.json(passengers);
+    return res.send(passengers);
   } catch (error) {
     console.error('Error retrieving passenger travels:', error);
     return res.status(500).send({ error: 'Internal Server Error', message: 'Too many results' });
