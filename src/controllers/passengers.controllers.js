@@ -5,7 +5,7 @@ export async function getPassengersTravels(req, res) {
   const nameFilter = req.query.name || '';
 
   if (page <= 0) {
-    return res.status(400).json({ error: 'Invalid page value' });
+    return res.status(400).send('Invalid page value');
   }
 
   try {
